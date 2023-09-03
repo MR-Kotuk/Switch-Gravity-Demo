@@ -2,8 +2,6 @@
 
 public class TrainTrToStopBus : MonoBehaviour
 {
-    public bool isPlank;
-
     [SerializeField] private Transform _trainStop;
 
     [SerializeField] private Transform[] _trainStopsLeft = new Transform[1];
@@ -35,15 +33,9 @@ public class TrainTrToStopBus : MonoBehaviour
     private void NewRotatePlank(float num)
     {
         if (num == 0f && _trainX == 90)
-        {
-            isPlank = true;
             _trainStop.eulerAngles = new Vector3(num, 0, 0);
-        }
 
         if (num == 90f && _trainX == 0)
-        {
-            isPlank = false;
             _trainStop.eulerAngles = new Vector3(num, 0, 0);
-        }
     }
 }
